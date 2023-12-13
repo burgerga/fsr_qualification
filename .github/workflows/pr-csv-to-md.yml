@@ -28,7 +28,7 @@ jobs:
           } >> $GITHUB_OUTPUT
       - name: Debug
         run: |
-          echo ${{ steps.csv.outputs.text }}
+          echo "${{ steps.csv.outputs.text }}"
       - name: Create MD
         uses: petems/csv-to-md-table-action@v3.0.0
         id: csv-table-output
