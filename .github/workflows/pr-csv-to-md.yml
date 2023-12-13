@@ -22,7 +22,7 @@ jobs:
           { 
             echo 'text<<EOF'
             #echo -n ','
-            head -1 FSR_QC.csv
+            #head -1 FSR_QC.csv
             #tail -5 FSR_QC.csv
             echo $DIFF
             echo EOF
