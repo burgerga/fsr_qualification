@@ -24,7 +24,8 @@ jobs:
             #echo -n ','
             head -1 FSR_QC.csv
             #tail -5 FSR_QC.csv | sed 's/|/\\|/g'
-            echo $DIFF | sed 's/|/\\|/g'
+            #echo $DIFF | sed 's/|/\\|/g'
+            git diff origin/$GITHUB_BASE_REF $GITHUB_SHA -U0 -- FSR_QC.csv | grep '^[+-][^+-]' | sed 's/|/\\|/g'
             echo EOF
           } >> $GITHUB_OUTPUT
       - name: Create MD
