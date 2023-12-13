@@ -17,7 +17,7 @@ jobs:
         run: |
           git fetch origin $GITHUB_BASE_REF --depth=1
           #export DIFF=$( git diff origin/$GITHUB_BASE_REF $GITHUB_SHA -U0 -- FSR_QC.csv | grep '^[+-][^+-]' | sed 's/^[+-]/&,/' )
-          export DIFF=$( git diff origin/$GITHUB_BASE_REF $GITHUB_SHA -U0 -- FSR_QC.csv | grep '^[+-][^+-]' | tr -d '\012' )
+          export DIFF=$( git diff origin/$GITHUB_BASE_REF $GITHUB_SHA -U0 -- FSR_QC.csv | grep '^[+-][^+-]' | set 's/\012/\n/g' )
           echo -e $DIFF
           { 
             echo 'text<<EOF'
