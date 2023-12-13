@@ -23,7 +23,7 @@ jobs:
             echo 'text<<EOF'
             #echo -n ','
             head -1 FSR_QC.csv
-            tail -5 FSR_QC.csv
+            tail -5 FSR_QC.csv | sed 's/|/\\|/g'
             #echo $DIFF
             echo EOF
           } >> $GITHUB_OUTPUT
