@@ -23,8 +23,8 @@ jobs:
             echo 'text<<EOF'
             #echo -n ','
             #head -1 FSR_QC.csv
-            #tail -5 FSR_QC.csv
-            echo $DIFF
+            tail -5 FSR_QC.csv
+            #echo $DIFF
             echo EOF
           } >> $GITHUB_OUTPUT
       - name: Create MD
